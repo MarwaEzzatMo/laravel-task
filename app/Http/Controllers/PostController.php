@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\post;
 use App\Models\User;
+use Carbon\Carbon;
 
 class PostController extends Controller
 {
@@ -23,8 +24,11 @@ class PostController extends Controller
         $posts=post::all();
        // post::othermethodes();
     //dd($posts);
+    $postss = post::paginate(15);
 
-       return view('posts.index',['allPosts'=>$posts]);
+   // {{ $users->links() }}
+
+       return view('posts.index',['allPosts'=>$postss]);
 
 
     }
