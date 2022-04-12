@@ -17,7 +17,7 @@
       </div>
       <div class="p-2">
       <h5 class="card-title" style="font-size:18px;display:inline;">posted By:-</h5>
-      <p class="card-text" style="display:inline;">{{$post["posted_by"]}}</p>
+      <p class="card-text" style="display:inline;">{{$post->user ? $post->user->name : 'not found'}}</p>
       </div>
       <div class="p-2">
       <h5 class="card-title" style="font-size:18px;display:inline;">Created At:-</h5>

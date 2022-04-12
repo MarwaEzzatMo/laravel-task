@@ -11,13 +11,21 @@
             <input name="title" type="text" class="form-control" id="exampleFormControlInput1">
           </div>
           <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">description</label>
+            <textarea name="description" class="form-control" id="exampleFormControlInput1" ></textarea>
+          </div>
+          <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">'posted By'</label>
-            <input name="postedby" type="text" class="form-control" id="exampleFormControlInput1">
+            <select class="form-control" name="post_creator" >
+              @foreach ($users as $user)
+              <option value="{{$user->id}}">{{$user->name}}</option>
+              @endforeach
+            </select>
           </div>
 
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Created At</label>
-            <input name="createdat" type="text" class="form-control" id="exampleFormControlInput1">
+            <input name="created_at" type="date" class="form-control" id="exampleFormControlInput1">
        </div>
 
           <div class="mb-3">

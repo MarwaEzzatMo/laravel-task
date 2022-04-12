@@ -9,7 +9,7 @@
         <table class="table mt-4">
             <thead>
               <tr>
-                <th scope="col">#</th>
+                <th scope="col">id</th>
                 <th scope="col">Title</th>
                 <th scope="col">Posted By</th>
                 <th scope="col">Created At</th>
@@ -19,10 +19,10 @@
             <tbody>
             @foreach ( $allPosts as  $index =>$post)
               <tr>
-                <td>{{$index}}</th>
-                <td>{{$post['title']}}</td>
-                <td>{{$post['posted_by']}}</td>
-                <td>{{$post['created_at']}}</td>
+                <td>{{$post->id}}</th>
+                <td>{{$post->title}}</td>
+                <td>{{$post->user ? $post->user->name : 'not found'}}</td>
+                <td>{{$post->created_at}}</td>
                 <td style="text-align: center">
                     <a href="{{route('posts.show', $post['id'])}}"class="btn btn-info">View</a>
                     <a href="{{route('posts.edit', $post['id'])}}" class="btn btn-primary">Edit</a>
