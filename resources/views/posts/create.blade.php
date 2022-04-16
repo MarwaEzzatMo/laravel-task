@@ -1,8 +1,10 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('title')Update post @endsection
 
 @section('content')
+
+
       <form method="POST" action="{{route('posts.store')}}" class="mt-5">
         @csrf
 
